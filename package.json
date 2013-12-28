@@ -1,0 +1,24 @@
+{
+  "name": "orthogonal",
+  "version": "0.1.0",
+  "author": "David Chambers <dc@davidchambers.me>",
+  "description": "DSL for describing simple vector graphics",
+  "keywords": ["dsl", "svg"],
+  "main": "./lib/orthogonal",
+  "licenses": [{
+    "type": "WTFPL",
+    "url": "https://raw.github.com/davidchambers/orthogonal/master/LICENSE"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davidchambers/orthogonal.git"
+  },
+  "dependencies": {
+    "underscore": "1.6.x"
+  },
+  "devDependencies": {
+    "coffee-script": "1.7.x",
+    "doctest": "0.6.x",
+    "semver": "2.2.x"
+  }
+}
