@@ -19,6 +19,6 @@
   "devDependencies": {
     "coffee-script": "1.7.x",
     "doctest": "0.6.x",
-    "semver": "2.2.x"
+    "xyz": "0.4.x"
   }
 }

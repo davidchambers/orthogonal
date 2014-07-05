@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+rm -f                                   lib/orthogonal.js
+make                                    lib/orthogonal.js
+git update-index --no-assume-unchanged  lib/orthogonal.js
+git add                                 lib/orthogonal.js
+git update-index --assume-unchanged     lib/orthogonal.js

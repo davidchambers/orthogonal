@@ -1,6 +1,6 @@
 COFFEE = node_modules/.bin/coffee
 DOCTEST = node_modules/.bin/doctest --module commonjs
-SEMVER = node_modules/.bin/semver
+XYZ = node_modules/.bin/xyz --message X.Y.Z --tag X.Y.Z --repo git@github.com:davidchambers/orthogonal.git --script scripts/prepublish
 
 SRC_IMAGES = $(shell find src/svg -type f)
 SVG_IMAGES = $(patsubst src/svg/%.coffee,lib/svg/%.svg,$(SRC_IMAGES))
@@ -28,27 +28,20 @@ clean:
 	rm -f -- $(LIB)
 
 
-.PHONY: release-patch release-minor release-major
-VERSION = $(shell node -p 'require("./package.json").version')
-release-patch: NEXT_VERSION = $(shell $(SEMVER) -i patch $(VERSION))
-release-minor: NEXT_VERSION = $(shell $(SEMVER) -i minor $(VERSION))
-release-major: NEXT_VERSION = $(shell $(SEMVER) -i major $(VERSION))
+.PHONY: release-major release-minor release-patch
+release-major: LEVEL = major
+release-minor: LEVEL = minor
+release-patch: LEVEL = patch
 
-release-patch release-minor release-major:
-	@printf 'Current version is $(VERSION). This will publish version $(NEXT_VERSION). Press [enter] to continue.' >&2
-	@read
-	node -e '\
-		var o = require("./package.json"); o.version = "$(NEXT_VERSION)"; \
-		require("fs").writeFileSync("./package.json", JSON.stringify(o, null, 2) + "\n")'
-	git commit --message '$(NEXT_VERSION)' -- package.json
-	git tag --annotate '$(NEXT_VERSION)' --message '$(NEXT_VERSION)'
-	git push origin refs/heads/master 'refs/tags/$(NEXT_VERSION)'
-	npm publish
+release-major release-minor release-patch:
+	@$(XYZ) --increment $(LEVEL)
 
 
 .PHONY: setup
 setup:
 	npm install
+	make clean
+	git update-index --assume-unchanged lib/orthogonal.js
 
 
 .PHONY: test
