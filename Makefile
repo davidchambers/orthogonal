@@ -4,8 +4,7 @@ XYZ = node_modules/.bin/xyz --message X.Y.Z --tag X.Y.Z --repo git@github.com:da
 
 SRC_IMAGES = $(shell find src/svg -type f)
 SVG_IMAGES = $(patsubst src/svg/%.coffee,lib/svg/%.svg,$(SRC_IMAGES))
-PNG_IMAGES = $(patsubst lib/svg/%.svg,lib/png/%@2x.png,$(SVG_IMAGES))
-LIB = lib/orthogonal.js $(SVG_IMAGES) $(PNG_IMAGES)
+LIB = lib/orthogonal.js $(SVG_IMAGES)
 
 
 .PHONY: all
@@ -17,10 +16,6 @@ lib/%.js: src/%.coffee
 lib/%.svg: src/%.coffee
 	mkdir -p '$(@D)'
 	$(COFFEE) '$<' >'$@'
-
-lib/png/%@2x.png: lib/svg/%.svg
-	mkdir -p '$(@D)'
-	rsvg-convert --format=png --zoom=2.0 '$<' >'$@'
 
 
 .PHONY: clean

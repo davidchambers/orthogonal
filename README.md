@@ -1,4 +1,4 @@
-<img alt="Orthogonal" src="https://raw.github.com/davidchambers/orthogonal/master/lib/png/orthogonal@2x.png" width="528" height="108" />
+<img alt="Orthogonal" src="https://cdn.rawgit.com/davidchambers/orthogonal/0.1.0/lib/svg/orthogonal.svg" width="528" height="108" />
 
 Orthogonal is a DSL for describing simple vector graphics. It can be used in
 JavaScript or any compiles-to-JavaScript language. The following examples are
@@ -25,10 +25,7 @@ square = (R 2)(D 2)(L 2)(U 2)
 
 Now for something a bit more advanced:
 
-<img alt="Octocat" src="https://raw.github.com/davidchambers/orthogonal/master/lib/png/octocat@2x.png" width="722" height="650" />
-
-_Note: The image above is actually a PNG created from the SVG created from the
-CoffeeScript source file. (GitHub no longer renders SVGs.)_
+<img alt="Octocat" src="https://cdn.rawgit.com/davidchambers/orthogonal/0.1.0/lib/svg/octocat.svg" width="722" height="650" />
 
 The source code is in [octocat.coffee][2].
 
