@@ -48,7 +48,7 @@ describe multiple filled regions.
 Attach orthogonal.{R,D,L,U,r,d,l,u} to the provided object. Extending the
 global object is recommended.
 
-#### orthogonal.bounds([[x0,y0],[x1,y1],...,[xN,yN]])
+#### orthogonal.bounds([[x0,y0],[x1,y1],...,[xN,yN]], scale = 1)
 
 Determine the bounds &mdash; expressed as [left,top,right,bottom] &mdash; for
 the provided array of coordinates.
