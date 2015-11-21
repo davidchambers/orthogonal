@@ -91,7 +91,7 @@ module.exports = (opts) ->
 
 
 if process.argv[1] is __filename then console.log module.exports
-  width: 728  # GitHub README width
+  width: 918  # GitHub README width
   octocatWidth: 20
   octocatHeight: 24
   octocatScale: [1, 12]
