@@ -25,7 +25,7 @@ square = (R 2)(D 2)(L 2)(U 2)
 
 Now for something a bit more advanced:
 
-<img alt="Octocat" src="https://cdn.rawgit.com/davidchambers/orthogonal/dd0a9cb447754bdff9ecfc6bc1c5d0e6b3273c9c/lib/svg/octocat.svg" width="728" height="656" />
+<img alt="Octocat" src="https://cdn.rawgit.com/davidchambers/orthogonal/b65dd2feecdeb072478bd990d459d93c61c9edb6/lib/svg/octocat.svg" width="918" height="686" />
 
 The source code is in [octocat.coffee][2].
 
