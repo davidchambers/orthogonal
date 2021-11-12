@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "coffee-script": "1.7.x",
-    "doctest": "0.18.x",
+    "doctest": "0.19.x",
     "xyz": "1.0.x"
   }
 }
